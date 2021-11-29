@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "6d3a0422-f0c7-4049-be87-91c00893f17a",
+		"name": "champion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:6666/api/NewLeague",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"dateNow.setDate(27);\r",
+							"dateNow.setFullYear(2022);\r",
+							"dateNow.setMonth(0);\r",
+							"pm.environment.set('currentDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": null,\r\n    \"name\": \" wwww\",\r\n\"startData\": \"{{currentDate}}\",\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/NewLeague",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"NewLeague"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/getLeague?id=2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/getLeague?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"getLeague"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/editLeague",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"dateNow.setDate(1);\r",
+							"dateNow.setFullYear(2023);\r",
+							"dateNow.setMonth(11);\r",
+							"pm.environment.set('startDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \" tennis\",\r\n    \"status\": 1,\r\n    \"startData\": \"{{startDate}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/editLeague",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"editLeague"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/findAllLeague",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"dateNow.setDate(1);\r",
+							"dateNow.setFullYear(2021);\r",
+							"dateNow.setMonth(11);\r",
+							"pm.environment.set('startDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \" tennis\",\r\n    \"status\": 1,\r\n    \"startData\": \"{{startDate}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/findAllLeague",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"findAllLeague"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/deleteLeague?id=64",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/deleteLeague?id=64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"deleteLeague"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "64"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/initParticipant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"new participant \",\r\n\"email\": \"participant@email.com\",\r\n    \"status\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/initParticipant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"initParticipant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/approveParticipant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9,\r\n    \"name\": \" mahomoud4\",\r\n\"email\": \"mhelaly4\",\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/createParticipant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"createParticipant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/findParticipant?id=41",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/findParticipant?id=41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"findParticipant"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "41"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/editParticipant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 41,\r\n    \"name\": \" helalyMahmoud\",\r\n    \"status\": 1,\r\n    \"email\": \"helalyMahmoud@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/editParticipant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"editParticipant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/findAllParticipant",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/findAllParticipant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"findAllParticipant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/deleteParticipant?id=17",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/deleteParticipant?id=17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"deleteParticipant"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/stratLeague",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "30",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/stratLeague",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"stratLeague"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/editResult",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"id\":58,\r\n\"homeResult\":4,\r\n\"wayResult\":0,\r\n\"isWin\":8\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/editResult",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"editResult"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/nextRound",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "30",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/nextRound",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"nextRound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/closeRound",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "50",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/closeRound",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"closeRound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/newMatch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 137,\r\n    \"leagueId\": 50,\r\n    \"homeParticipant\": 40,\r\n    \"wayParticipant\": 36,\r\n    \"homeResulat\": null,\r\n    \"wayResulat\": null,\r\n    \"isWin\": null,\r\n    \"startMatch\": \"2021-12-01\",\r\n    \"round\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/newMatch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"newMatch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/findMatch?id=136",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/findMatch?id=136",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"findMatch"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "136"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/editMatch",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"dateNow.setDate(1);\r",
+							"dateNow.setFullYear(2023);\r",
+							"dateNow.setMonth(11);\r",
+							"pm.environment.set('startDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 138,\r\n    \"leagueId\": 50,\r\n    \"homeParticipant\": 111,\r\n    \"wayParticipant\": 222,\r\n    \"homeResulat\": null,\r\n    \"wayResulat\": null,\r\n    \"isWin\": null,\r\n    \"round\": null, \r\n    \"startMatch\":\"{{startDate}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/editMatch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"editMatch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/findAllMatches",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"dateNow.setDate(1);\r",
+							"dateNow.setFullYear(2023);\r",
+							"dateNow.setMonth(11);\r",
+							"pm.environment.set('startDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/findAllMatches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"findAllMatches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6666/api/sendEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"participant\": 41,\r\n\"leagueId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6666/api/sendEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6666",
+					"path": [
+						"api",
+						"sendEmail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
